@@ -51,6 +51,9 @@ internal static class Util
         return true;
     }
 
+    /// <summary>
+    /// Save payload file used for tests. Contains key, IV, mode, original data and encrypted data.
+    /// </summary>
     internal static void SavePayload(
         string path, string mode, byte[] key, byte[] iv, Span<byte> plain, Span<byte> encrypted, int bytesPerLine = 8)
     {
