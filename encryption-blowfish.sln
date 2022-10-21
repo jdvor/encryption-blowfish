@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_solution", "_solution", "{FA1430B3-E33A-4566-B45C-D8E036905D13}"
+	ProjectSection(SolutionItems) = preProject
+		dependencies.props = dependencies.props
+		pack.sh = pack.sh
+		publish.sh = publish.sh
+		README.md = README.md
+		shared.props = shared.props
+		development.md = development.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{880E5B25-278C-476B-962D-16B50212F8C8}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A9656AC1-64B0-442F-8DFC-604CA708BE14}"
+	ProjectSection(SolutionItems) = preProject
+		test\Directory.Build.props = test\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bench", "bench", "{9729831E-B1B0-4481-B22E-A9B7D12611CF}"
+	ProjectSection(SolutionItems) = preProject
+		bench\Directory.Build.props = bench\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encryption.Blowfish", "src\Encryption.Blowfish\Encryption.Blowfish.csproj", "{91F378A8-8560-48DF-8F17-9A6478B5C06F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encryption.Blowfish.Tests", "test\Encryption.Blowfish.Tests\Encryption.Blowfish.Tests.csproj", "{8B5E893E-2131-4DF1-8AB4-F260680688FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encryption.Blowfish.Benchmarks", "bench\Encryption.Blowfish.Benchmarks\Encryption.Blowfish.Benchmarks.csproj", "{18C5D807-190E-43A0-A1A5-7ABD0AF22C22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{1989203C-D00C-47A9-997E-6787731F6658}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\publish.yml = .github\workflows\publish.yml
+		.github\workflows\test.yml = .github\workflows\test.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{880E5B25-278C-476B-962D-16B50212F8C8} = {FA1430B3-E33A-4566-B45C-D8E036905D13}
+		{A9656AC1-64B0-442F-8DFC-604CA708BE14} = {FA1430B3-E33A-4566-B45C-D8E036905D13}
+		{9729831E-B1B0-4481-B22E-A9B7D12611CF} = {FA1430B3-E33A-4566-B45C-D8E036905D13}
+		{1989203C-D00C-47A9-997E-6787731F6658} = {FA1430B3-E33A-4566-B45C-D8E036905D13}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91F378A8-8560-48DF-8F17-9A6478B5C06F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F378A8-8560-48DF-8F17-9A6478B5C06F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F378A8-8560-48DF-8F17-9A6478B5C06F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F378A8-8560-48DF-8F17-9A6478B5C06F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B5E893E-2131-4DF1-8AB4-F260680688FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B5E893E-2131-4DF1-8AB4-F260680688FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B5E893E-2131-4DF1-8AB4-F260680688FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B5E893E-2131-4DF1-8AB4-F260680688FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18C5D807-190E-43A0-A1A5-7ABD0AF22C22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18C5D807-190E-43A0-A1A5-7ABD0AF22C22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18C5D807-190E-43A0-A1A5-7ABD0AF22C22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18C5D807-190E-43A0-A1A5-7ABD0AF22C22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

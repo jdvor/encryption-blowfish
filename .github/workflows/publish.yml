@@ -1,0 +1,30 @@
+name: Publish to NuGet
+on:
+  workflow_dispatch:
+env:
+  DOTNET_VERSION: "6.0.x"
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # history is required for finding version tags
+
+      - name: Set executable permission for scripts
+        shell: bash
+        run: chmod u+x *.sh
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Create package
+        shell: bash
+        run: ./pack.sh -c
+
+      - name: Publish package
+        shell: bash
+        run: ./publish.sh ${{ secrets.NUGET_APIKEY_BLOWFISH }}

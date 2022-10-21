@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(DotnetFramework)</TargetFramework>
+    <Description>Time-sortable efficient value types</Description>
+  </PropertyGroup>
+
+</Project>

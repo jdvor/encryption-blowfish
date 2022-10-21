@@ -1,0 +1,12 @@
+<Project>
+
+  <Import Project="..\shared.props" />
+  <Import Project="..\dependencies.props" />
+
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+</Project>
