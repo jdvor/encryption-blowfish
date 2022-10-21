@@ -1,6 +1,8 @@
 # Encryption.Blowfish
 
 [![Tests](https://github.com/jdvor/encryption-blowfish/actions/workflows/test.yml/badge.svg)](https://github.com/jdvor/encryption-blowfish/actions/workflows/test.yml)
+[![NuGet](https://img.shields.io/nuget/v/Encryption.Blowfish)](https://www.nuget.org/packages/Encryption.Blowfish/)
+
 
 Efficient implementation of [Blowfish][bf] cipher with minimal memory allocations in [ECB][ecb], [CBC][cbc] and [CTR][ctr] block modes.<br />
 CTR is also available as encryption and decryption stream.<br />
