@@ -58,7 +58,7 @@ Then you can find results in `./publish/report` directory.
 ### Run basic benchmarks and output reports to publish directory
 ```shell
 dotnet publish bench/Encryption.Blowfish.Benchmarks/Encryption.Blowfish.Benchmarks.csproj -c Release -p:RunAnalyzers=False -o ./publish/bench -v minimal --nologo
-./publish/bench/Encryption.Blowfish.Benchmarks -a publish -e GitHub -f Encryption.Blowfish.Benchmarks.*
+./publish/bench/Encryption.Blowfish.Benchmarks -a ../../ -e GitHub -f Encryption.Blowfish.Benchmarks.*
 ```
 
 Then you can find results in `./publish/results` directory.
