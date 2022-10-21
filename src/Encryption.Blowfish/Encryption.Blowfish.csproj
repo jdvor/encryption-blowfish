@@ -2,7 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>$(DotnetFramework)</TargetFramework>
-    <Description>Time-sortable efficient value types</Description>
+    <Description>
+      Efficient implementation of Blowfish cipher with minimal memory allocations in ECB, CBC and CTR block modes. 
+      CTR is also available as encryption and decryption stream.
+    </Description>
   </PropertyGroup>
 
 </Project>

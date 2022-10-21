@@ -11,7 +11,7 @@
 
   <PropertyGroup Label="NuGet package">
     <IsPackable>true</IsPackable>
-    <PackageProjectUrl>https://github.com/jdvor/encryption-blowfish/blob/main/README.md</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/jdvor/encryption-blowfish/blob/master/README.md</PackageProjectUrl>
     <RepositoryUrl>https://github.com/jdvor/encryption-blowfish</RepositoryUrl>
     <PackageTags>blowfish, encryption, cipher</PackageTags>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
