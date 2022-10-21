@@ -1,5 +1,7 @@
 # Encryption.Blowfish
 
+[![Tests](https://github.com/jdvor/encryption-blowfish/actions/workflows/test.yml/badge.svg)](https://github.com/jdvor/encryption-blowfish/actions/workflows/test.yml)
+
 Efficient implementation of [Blowfish][bf] cipher with minimal memory allocations in [ECB][ecb], [CBC][cbc] and [CTR][ctr] block modes.<br />
 CTR is also available as encryption and decryption stream.<br />
 Non-stream variants works by mutating input buffer (`Span<byte>`).
