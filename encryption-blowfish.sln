@@ -2,22 +2,28 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_solution", "_solution", "{FA1430B3-E33A-4566-B45C-D8E036905D13}"
 	ProjectSection(SolutionItems) = preProject
-		dependencies.props = dependencies.props
 		pack.sh = pack.sh
 		publish.sh = publish.sh
 		README.md = README.md
 		shared.props = shared.props
 		development.md = development.md
+		Directory.Packages.props = Directory.Packages.props
+		global.json = global.json
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{880E5B25-278C-476B-962D-16B50212F8C8}"
 	ProjectSection(SolutionItems) = preProject
 		src\Directory.Build.props = src\Directory.Build.props
+		src\BannedSymbols.txt = src\BannedSymbols.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A9656AC1-64B0-442F-8DFC-604CA708BE14}"
 	ProjectSection(SolutionItems) = preProject
 		test\Directory.Build.props = test\Directory.Build.props
+		test\xunit.runner.json = test\xunit.runner.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bench", "bench", "{9729831E-B1B0-4481-B22E-A9B7D12611CF}"

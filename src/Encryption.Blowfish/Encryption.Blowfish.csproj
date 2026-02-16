@@ -1,11 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>$(DotnetFramework)</TargetFramework>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
     <Description>
-      Efficient implementation of Blowfish cipher with minimal memory allocations in ECB, CBC and CTR block modes. 
+      Efficient implementation of Blowfish cipher with minimal memory allocations in ECB, CBC and CTR block modes.
       CTR is also available as encryption and decryption stream.
     </Description>
+    <IsPackable>true</IsPackable>
+    <PackageProjectUrl>https://github.com/jdvor/encryption-blowfish/blob/master/README.md</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jdvor/encryption-blowfish</RepositoryUrl>
+    <PackageTags>blowfish, encryption, cipher</PackageTags>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Authors>Jan Dvorak</Authors>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
 </Project>

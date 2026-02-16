@@ -1,0 +1,2 @@
+P:System.DateTime.Now;Use TimeProvider.System.GetUtcNow() instead
+P:System.DateTimeOffset.Now;Use TimeProvider.System.GetUtcNow() instead

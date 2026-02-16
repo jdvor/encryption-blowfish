@@ -2,8 +2,14 @@
 
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
-    <DotnetFramework>net6.0</DotnetFramework>
+    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsPublishable>false</IsPublishable>
+    <IsTestProject>false</IsTestProject>
   </PropertyGroup>
 
 </Project>

@@ -1,18 +1,27 @@
-*.cs text diff=csharp
-
-*.csproj text merge=union
-*.sln text merge=union
-*.msbuild text merge=union
-*.md text diff=astextplain
-*.css text diff=css
-*.html text diff=html
-
-*.png binary
-*.dll binary diff=exif
-*.exe binary diff=exif
-*.pdb binary diff=exif
-*.pem binary
-*.pfx binary
-*.xlsx binary
-
 * text=auto
+
+*.cs      text diff=csharp
+*.sln     text merge=union
+*.csproj  text merge=union
+*.fsproj  text merge=union
+*.msbuild text merge=union
+*.css     text diff=css
+*.html    text diff=html
+*.sh      text eol=lf
+
+*.pdb    binary diff=exif
+*.exe    binary diff=exif
+*.dll    binary diff=exif
+*.pem    binary
+*.pfx    binary
+*.eml    binary
+*.jpg    binary
+*.png    binary
+*.gif    binary
+*.ico    binary
+*.woff2  binary
+*.svg    binary
+*.docx   binary
+*.xlsx   binary
+*.pdf    binary
+*.drawio binary

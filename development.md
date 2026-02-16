@@ -49,8 +49,8 @@ dotnet tool install -g coverlet.console
 # https://github.com/danielpalme/ReportGenerator
 dotnet tool install -g dotnet-reportgenerator-globaltool
 
-dotnet test --collect:"XPlat Code Coverage" --results-directory publish/coverage
-reportgenerator -reports:publish/coverage/**/coverage.cobertura.xml -targetdir:publish/report -reporttypes:HtmlInline
+dotnet test -c Release -v minimal --nologo --logger trx --results-directory ./artifacts/test-results --collect:"XPlat Code Coverage"
+reportgenerator -reports:publish/coverage/**/coverage.cobertura.xml -targetdir:artifacts/test-results -reporttypes:HtmlInline
 ```
 
 Then you can find results in `./publish/report` directory.

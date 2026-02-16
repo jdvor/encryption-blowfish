@@ -1,34 +1,52 @@
 <Project>
 
-  <Import Project="..\shared.props" />
-  <Import Project="..\dependencies.props" />
+  <Import Project="..\shared.props"/>
 
   <PropertyGroup>
-    <Nullable>enable</Nullable>
-    <AnalysisMode>Recommended</AnalysisMode>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
 
-  <PropertyGroup Label="NuGet package">
-    <IsPackable>true</IsPackable>
-    <PackageProjectUrl>https://github.com/jdvor/encryption-blowfish/blob/master/README.md</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/jdvor/encryption-blowfish</RepositoryUrl>
-    <PackageTags>blowfish, encryption, cipher</PackageTags>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Authors>Jan Dvorak</Authors>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+  <PropertyGroup>
+    <AnalysisMode>Recommended</AnalysisMode>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <_SkipUpgradeNetAnalyzersNuGetWarning>true</_SkipUpgradeNetAnalyzersNuGetWarning>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DebugType>embedded</DebugType>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <ItemGroup>
-    <Using Remove="System.IO" />
-    <Using Remove="System.Net.Http" />
+    <InternalsVisibleTo Include="$(AssemblyName).Tests"/>
+  </ItemGroup>
+
+  <ItemGroup Label="CompileTime">
+    <PackageReference Include="Microsoft.CodeAnalysis.BannedApiAnalyzers">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="$(SourceLinkVersion)" PrivateAssets="All"/>
+    <Using Remove="System.IO"/>
+    <Using Remove="System.Net.Http"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)/BannedSymbols.txt"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>DynamicProxyGenAssembly2</_Parameter1>
+    </AssemblyAttribute>
   </ItemGroup>
 
 </Project>

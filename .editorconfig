@@ -2,28 +2,33 @@ root = true
 
 [*]
 indent_style = space
-# (Please don't specify an indent_size here; that has too many unintended consequences.)
 
-[*.{cs,csx,json,yml,xml,proto,md,ps1,sh}]
-indent_size = 4
-insert_final_newline = true
+[*.{yml,xml,json,txt}]
+indent_size = 2
 trim_trailing_whitespace = true
-end_of_line = lf
 charset = utf-8
+end_of_line = lf
 
 [*.{cs,csx,proto,ps1,sh}]
+indent_size = 4
+insert_final_newline = true
 max_line_length = 120
+trim_trailing_whitespace = true
+charset = utf-8
+end_of_line = lf
 
 [*.md]
+indent_size = 4
 trim_trailing_whitespace = false
-max_line_length = 120
+charset = utf-8
+end_of_line = lf
 
-[*.{json,yml,xml,csproj,sln}]
+[*.{csproj,props}]
 indent_size = 2
-
+trim_trailing_whitespace = true
+insert_final_newline = true
 
 [*.cs]
-# everything bellow this line should be in .globalconfig file, but Rider does not yet support it
 # https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/configuration-options
 # https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/code-style-rule-options
 # https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/
@@ -34,8 +39,11 @@ csharp_using_directive_placement = inside_namespace:warning
 dotnet_separate_import_directive_groups = false
 dotnet_sort_system_directives_first = false
 
-# Code
+# Documentation
+dotnet_analyzer_diagnostic.category-Documentation.severity = none
+dotnet_analyzer_diagnostic.category-StyleCop.CSharp.DocumentationRules.severity = none
 
+# Code
 dotnet_diagnostic.CA1010.severity = none       # CollectionsShouldImplementGenericInterface
 dotnet_diagnostic.CA1031.severity = none       # DoNotCatchGeneralExceptionTypes
 dotnet_diagnostic.CA1040.severity = none       # AvoidEmptyInterfaces
@@ -48,27 +56,21 @@ dotnet_diagnostic.CA1714.severity = none       # FlagsEnumsShouldHavePluralNames
 dotnet_diagnostic.CA1819.severity = none       # PropertiesShouldNotReturnArrays
 dotnet_diagnostic.CA1822.severity = suggestion # Mark members as static
 dotnet_diagnostic.CA2225.severity = none       # OperatorOverloadsHaveNamedAlternates
-
-
-# Style
-
-
-dotnet_diagnostic.SA1101.severity = none       # PrefixLocalCallsWithThis
-dotnet_diagnostic.SA1124.severity = none       # DoNotUseRegions
+dotnet_diagnostic.CS8981.severity = none       # The type name only contains lower-cased ascii characters; useful for namespaces aliases
 
 
 # Style - Documentation
-# everything off; otherwise it leads to anemic, high noise-to-signal documentation
+dotnet_diagnostic.CS1573.severity = none       # Missing XML comment for publicly visible type or member
+dotnet_diagnostic.CS1591.severity = none       # no matching param tag in the XML comment
 
-dotnet_analyzer_diagnostic.category-Documentation.severity = none
-dotnet_analyzer_diagnostic.category-StyleCop.CSharp.DocumentationRules.severity = none
-
-dotnet_diagnostic.CS1591.severity = none       # Missing XML comment for publicly visible type or member
-
+# Style
+dotnet_diagnostic.SA1101.severity = none       # PrefixLocalCallsWithThis
+dotnet_diagnostic.SA1124.severity = none       # DoNotUseRegions
+dotnet_diagnostic.SA1203.severity = none       # ConstantsMustAppearBeforeFields
+dotnet_diagnostic.SA1214.severity = none       # ReadonlyElementsMustAppearBeforeNonReadonlyElements
+dotnet_diagnostic.SA1316.severity = none       # TupleElementNamesShouldUseCorrectCasing
 
 # Style - Ordering Rules
-# mostly off; organize ctor first then by what's coupled together and not by member type and accessibility
-
 dotnet_diagnostic.SA1200.severity = none       # UsingDirectivesMustBePlacedWithinNamespace
 dotnet_diagnostic.SA1201.severity = none       # ElementsMustAppearInTheCorrectOrder
 dotnet_diagnostic.SA1202.severity = none       # ElementsMustBeOrderedByAccess
@@ -84,3 +86,20 @@ dotnet_diagnostic.SA1211.severity = warning    # UsingAliasDirectivesMustBeOrder
 dotnet_diagnostic.SA1212.severity = none       # PropertyAccessorsMustFollowOrder
 dotnet_diagnostic.SA1213.severity = none       # EventAccessorsMustFollowOrder
 dotnet_diagnostic.SA1214.severity = warning    # ReadonlyElementsMustAppearBeforeNonReadonlyElements
+
+# xUnit
+dotnet_diagnostic.xUnit1004.severity = none    # Test methods should not be skipped
+
+# Migrations
+[src/**/Migrations/*.cs]
+dotnet_analyzer_diagnostic.severity = none
+dotnet_diagnostic.CA1825.severity = none
+dotnet_diagnostic.CA1861.severity = none
+dotnet_diagnostic.CS8933.severity = none
+dotnet_diagnostic.SA1200.severity = none
+dotnet_diagnostic.SA1210.severity = none
+
+# Protos
+[src/**/Protos/**/*.cs]
+dotnet_analyzer_diagnostic.severity = none
+dotnet_diagnostic.SA1518.severity = none

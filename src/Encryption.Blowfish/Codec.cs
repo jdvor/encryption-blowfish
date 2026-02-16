@@ -20,7 +20,7 @@ public sealed class Codec
     /// </summary>
     /// <param name="key">cipher key; valid size is &lt;8, 448&gt;</param>
     /// <exception cref="ArgumentException">on invalid input</exception>
-    public Codec(byte[] key)
+    public Codec(byte[]? key)
     {
         if (key is null || key.Length is < 8 or > 448)
         {

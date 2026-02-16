@@ -75,7 +75,7 @@ internal static class Util
     internal static bool TryLoadPayload(
         string path, out string mode, out byte[] key, out byte[] iv, out byte[] plain, out byte[] encrypted)
     {
-        static (bool, int) IsHeader(string line)
+        static (bool, int) IsHeader(string? line)
         {
             if (line is not null && line.StartsWith('-'))
             {

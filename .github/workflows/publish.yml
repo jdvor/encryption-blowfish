@@ -2,22 +2,23 @@ name: Publish to NuGet
 on:
   workflow_dispatch:
 env:
-  DOTNET_VERSION: "6.0.x"
+  DOTNET_VERSION: "10.0.x"
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # history is required for finding version tags
+          fetch-depth: 0
+          fetch-tags: true
 
       - name: Set executable permission for scripts
         shell: bash
         run: chmod u+x *.sh
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 

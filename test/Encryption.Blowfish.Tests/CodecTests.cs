@@ -14,14 +14,14 @@ public class CodecTests
     [Fact]
     public void RejectsEmptyKey()
     {
-        Assert.Throws<ArgumentException>(() => new Codec(Array.Empty<byte>()));
+        Assert.Throws<ArgumentException>(() => new Codec([]));
     }
 
     [Fact]
     public void RejectsIncorrectSizeKey()
     {
         // valid size: <8, 448>
-        Assert.Throws<ArgumentException>(() => new Codec(Array.Empty<byte>()));
+        Assert.Throws<ArgumentException>(() => new Codec([]));
         Assert.Throws<ArgumentException>(() => new Codec(new byte[7]));
         Assert.Throws<ArgumentException>(() => new Codec(new byte[449]));
     }

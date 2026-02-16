@@ -1,9 +1,30 @@
-publish/
-packages/
-BenchmarkDotNet.Artifacts/
+### Solution specific ###
+
+*.bkp
+
+[Pp]ublish/
+[Aa]rtifacts/
+nupkg/
+deps/
 local.settings.json
 *.dev.json
-AssemblyInfoGenerated.cs
+*.local.json
+*.private.env.json
+**/.obsidian/workspace*
+try.sh
+version.env
+http-client.private.env.json
+.http/
+
+# Claude AI
+CLAUDE.local.md
+.claude/
+!.claude/CLAUDE.md
+!.claude/commands/
+!.claude/agents/
+
+### Git ###
+*.orig
 
 
 ### Common detritus ###
@@ -12,6 +33,9 @@ AssemblyInfoGenerated.cs
 .LSOverride
 Thumbs.db
 $RECYCLE.BIN/
+[Ll]og/
+[Ll]ogs/
+*.log
 
 
 ### Csharp ###
@@ -36,15 +60,14 @@ x86/
 bld/
 [Bb]in/
 [Oo]bj/
-[Ll]og/
-[Ll]ogs/
 
 
-### Intellij ###
+### Javascript ###
+node-modules/
+
+
+### IntelliJ ###
 .idea/
-
-# JetBrains Rider
-*.sln.iml
 
 
 ### VisualStudioCode ###
@@ -61,7 +84,7 @@ bld/
 # Built Visual Studio Code Extensions
 *.vsix
 
-### VisualStudioCode Patch ###
+# Visual Studio Code Patch
 .history
 .ionide
 
@@ -72,14 +95,6 @@ bld/
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
-
-# NUnit
-*.VisualState.xml
-TestResult.xml
-nunit-*.xml
-
-# Benchmark Results
-BenchmarkDotNet.Artifacts/
 
 # Visual Studio profiler
 *.psess
