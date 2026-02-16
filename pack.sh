@@ -39,7 +39,7 @@ fi
 
 if [ -z "$pkgpath" ]; then
     if [ "$cibuild" == "True" ]; then
-        pkgpath="./artifacts"
+        pkgpath="./packages"
     else
         pkgpath_raw=$(nuget locals global-packages -list)
         pkgpath="${pkgpath_raw/global-packages: /}"
@@ -56,7 +56,7 @@ echo
 
 rm -rf ./publish
 dotnet clean src/Encryption.Blowfish/Encryption.Blowfish.csproj -c Release -v quiet --nologo
-dotnet pack src/Encryption.Blowfish/Encryption.Blowfish.csproj -c Release -o ./publish --nologo \
+dotnet pack src/Encryption.Blowfish/Encryption.Blowfish.csproj -c Release -o ./artifacts --nologo \
     -p:VersionPrefix="$version" \
     -p:VersionSuffix="$suffix" \
     -p:RestorePackagesPath="$pkgpath" \
