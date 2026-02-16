@@ -6,6 +6,7 @@ on:
   pull_request:
     branches: [main]
     paths-ignore: ['**.md', '**.sh', '.github/workflows/*.yml']
+  workflow_dispatch:
 
 permissions:
   checks: write
