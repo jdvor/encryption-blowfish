@@ -9,7 +9,7 @@ fi
 
 pub=0
 shopt -s nullglob
-for file in ./publish/*.{nupkg,snupkg} ; do
+for file in ./artifacts/*.nupkg ; do
     dotnet nuget push "$file" -k "$apikey" -s https://api.nuget.org/v3/index.json --skip-duplicate
     pub=$((pub + 1))
 done

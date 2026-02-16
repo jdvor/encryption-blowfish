@@ -15,6 +15,7 @@ try.sh
 version.env
 http-client.private.env.json
 .http/
+packages/
 
 # Claude AI
 CLAUDE.local.md

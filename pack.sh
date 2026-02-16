@@ -39,7 +39,7 @@ fi
 
 if [ -z "$pkgpath" ]; then
     if [ "$cibuild" == "True" ]; then
-        pkgpath="./packages"
+        pkgpath="./artifacts"
     else
         pkgpath_raw=$(nuget locals global-packages -list)
         pkgpath="${pkgpath_raw/global-packages: /}"
