@@ -16,6 +16,7 @@ version.env
 http-client.private.env.json
 .http/
 packages/
+BenchmarkDotNet.Artifacts/
 
 # Claude AI
 CLAUDE.local.md

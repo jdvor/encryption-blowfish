@@ -42,23 +42,26 @@ git push --tags
 ```
 
 ### Test coverage & report
+
 ```shell
 # https://github.com/coverlet-coverage/coverlet
-dotnet tool install -g coverlet.console
+dotnet tool update -g coverlet.console
 
 # https://github.com/danielpalme/ReportGenerator
-dotnet tool install -g dotnet-reportgenerator-globaltool
+dotnet tool update -g dotnet-reportgenerator-globaltool
 
 dotnet test -c Release -v minimal --nologo --logger trx --results-directory ./artifacts/test-results --collect:"XPlat Code Coverage"
-reportgenerator -reports:publish/coverage/**/coverage.cobertura.xml -targetdir:artifacts/test-results -reporttypes:HtmlInline
+reportgenerator -reports:artifacts/test-results/**/coverage.cobertura.xml -targetdir:artifacts -reporttypes:MarkdownSummaryGithub
 ```
 
-Then you can find results in `./publish/report` directory.
+Then you can find results in `./artifacts/SummaryGithub.md`.
 
-### Run basic benchmarks and output reports to publish directory
+
+### Run basic benchmarks and output reports
+
 ```shell
-dotnet publish bench/Encryption.Blowfish.Benchmarks/Encryption.Blowfish.Benchmarks.csproj -c Release -p:RunAnalyzers=False -o ./publish/bench -v minimal --nologo
-./publish/bench/Encryption.Blowfish.Benchmarks -a ../../ -e GitHub -f Encryption.Blowfish.Benchmarks.*
+dotnet publish bench/Encryption.Blowfish.Benchmarks/Encryption.Blowfish.Benchmarks.csproj -c Release -p:RunAnalyzers=False -o ./artifacts/bench -v minimal --nologo
+./artifacts/bench/Encryption.Blowfish.Benchmarks -r net10.0 -m -e GitHub -a ./artifacts/bench -f *
 ```
 
-Then you can find results in `./publish/results` directory.
+Then you can find results in `./artifacts/bench/results` directory.
