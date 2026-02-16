@@ -1,8 +1,4 @@
-# Encryption.Blowfish
-
-[![Tests](https://github.com/jdvor/encryption-blowfish/actions/workflows/test.yml/badge.svg)](https://github.com/jdvor/encryption-blowfish/actions/workflows/test.yml)
-[![NuGet](https://img.shields.io/nuget/v/Encryption.Blowfish)](https://www.nuget.org/packages/Encryption.Blowfish/)
-
+﻿# Encryption.Blowfish
 
 Efficient implementation of [Blowfish][bf] cipher with minimal memory allocations in [ECB][ecb], [CBC][cbc] and [CTR][ctr] block modes.<br />
 CTR is also available as encryption and decryption stream.<br />
@@ -17,7 +13,7 @@ nuget package Encryption.Blowfish
 ```shell
 dotnet add package Encryption.Blowfish [ -v 2.0.0 ]
 ```
-### Buffer 
+### Buffer
 
 ```csharp
 using Encryption.Blowfish;
@@ -71,12 +67,6 @@ bfd.CopyTo(decrypted);
 | *ParallelBlowfishCtr*      | CTR        | Recommended. Parallel computation from certain data size.  Works without padding.               | buffer   | yes         |
 | *BlowfishCtrEncryptStream* | CTR        | Only when you need stream-sematics; otherwise you are better off with input buffer variants.    | stream   | no          |
 | *BlowfishCtrDecryptStream* | CTR        | dtto                                                                                            | stream   | no          |
-
-Some smaller ease-of-life extension methods are also available in the package.
-
-## Development
-
-see [development.md](development.md)
 
 
 [bf]: https://www.schneier.com/academic/archives/1994/09/description_of_a_new.html
