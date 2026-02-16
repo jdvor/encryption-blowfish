@@ -18,7 +18,7 @@ jobs:
         run: dotnet publish bench/Encryption.Blowfish.Benchmarks/Encryption.Blowfish.Benchmarks.csproj -c Release -p:RunAnalyzers=False -o ./artifacts/bench -v minimal --nologo
 
       - name: Run benchmarks
-        run: ./artifacts/bench/Encryption.Blowfish.Benchmarks -r net10.0 -m -e GitHub -a ./artifacts/bench -f *
+        run: ./artifacts/bench/Encryption.Blowfish.Benchmarks -r net10.0 -m -e GitHub -a ./artifacts/bench -f '*'
 
       - name: Upload benchmark results as artifacts
         uses: actions/upload-artifact@v4
